@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <title>вхождение</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+    <h1>Вычисление средней температуры датчиков</h1>
+    <form>
+        <label for="input">Введите строку с показаниями датчиков:</label><br><br>
+        <input type="text" id="input" name="input"><br><br>
+        <label for="sort-by">Выберите поле для сортировки:</label><br><br>
+        <select id="sort-by" name="sort-by">
+            <option value="id">ID датчика</option>
+            <option value="temp">Средняя температура</option>
+        </select><br><br>
+        <input type="button" value="Вычислить" onclick="calculateAverageTemperature()"><br><br>
+    </form>
+
+    <div id="output"></div>
+    <script src="js/hello.js"></script>
+</body>
+</html>
