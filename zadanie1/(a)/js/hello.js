@@ -1,11 +1,11 @@
-function calculateOccurrences() {
+const calculateOccurrences = () => {
     let word = document.getElementById("word-input").value;
     let count = parseInt(document.getElementById("count-input").value);
     let totalOccurrences = 0;
 
     for (let i = 0; i < count; i++) {
         let string = document.getElementById("string-input-" + i).value;
-        let occurrences = (string.match(new RegExp(word, "g")) || []).length;
+        let occurrences = (string.match(new RegExp(word, "g")) || ).length;
         totalOccurrences += occurrences;
     }
 
@@ -13,7 +13,7 @@ function calculateOccurrences() {
 }
 
 
-document.getElementById("count-input").addEventListener("change", function() {
+document.getElementById("count-input").addEventListener("change", () => {
     let count = parseInt(this.value);
 
     let div = document.getElementById("strings-div");
