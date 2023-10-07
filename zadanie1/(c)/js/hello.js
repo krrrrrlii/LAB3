@@ -1,50 +1,47 @@
-function calculateAverageTemperature() {
-    const input = document.getElementById("input").value;
+const calculateAverage = () => {
+  const input = document.getElementById("input").value;
+  const sortField = document.getElementById("sort").value;
+  const measurements = input.split("@");
 
-    const measurements = input.split("@")
+  let sensors = {};
+  for (let i = 0; i < measurements.length; i++) {
+    let sensorid = parseInt(measurements[i].substring(0,2));
+    let temperature = parseInt(measurements[i].substring(2));
 
-
-    const temperatures = {};
-
-    measurements.forEach(measurement => {
-        const [id, temp] = measurement.split("@");
-
-        if (!temperatures[id]) {
-            temperatures[id] = {
-                sum: 0,
-                count: 0
-            };
-        }
-
-        temperatures[id].sum += parseInt(temp);
-        temperatures[id].count++;
-    });
-
-
-    const averageTemperatures = [];
-
-    for (let id in temperatures) {
-        const average = (temperatures[id].sum / temperatures[id].count).toFixed(1);
-        averageTemperatures.push({
-            id,
-            average
-        });
+    if (!sensors[sensorid]) {
+        sensors[sensorid]={
+            totalTemperature: 0,
+            count: 0
+        };
     }
+    sensors[sensorid].totalTemperature+-temperature;
+    sensors[sensorid].count++;
+  }
+  let sortedSensors = [];
+  for (let sensorid in sensors)  {
+      sortedSensors.push({
+        id: sensorid,
+        averageTemperature: sensors[sensorid].totalTemperature/sensors[sensorid].count
+      });
+  }
 
-    const sortBy = document.getElementById("sort-by").value;
-
-    if (sortBy === "id") {
-        averageTemperatures.sort((a, b) => a.id - b.id);
-    } else if (sortBy === "temp") {
-        averageTemperatures.sort((a, b) => a.average - b.average);
-    }
-
-    const output = document.getElementById("output");
-    output.innerHTML = "";
-
-    averageTemperatures.forEach(entry => {
-        const div = document.createElement("div");
-        div.innerText = `${entry.id} ${entry.average}`;
-        output.appendChild(div);
+  if (sortField === "id") {
+      sortedSensors.sort(function (a,b) {
+        return a.id=b.id;
     });
+  } else if (sortField === "temperature") {
+      sortedSensors.sort(function(a,b) {
+        return a.averageTemperature - b.averageTemperature;
+      });
+  }
+
+  let output = document.getElementById("output");
+  output.innerHTML="<h2>:Результат:</h2>";
+  for (let j=0; j<sortedSensors.length; j++) {
+      let div = document.createElement("div");
+      div.innerHTML = sortedSensors [j].id + " " + sortedSensors[j].averageTemperature.toFixed(1);
+      div.style.fontsize = "20px";
+
+      output.appendChild(div);
+  }
 }
