@@ -1,12 +1,36 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-  }
-h3 {
-    font-weight: normal;
-    font-size: 18px;
+* {
+    box-sizing: border-box;
 }
-label, input {
+
+label {
+    color: #010951;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+button {
+    [type="text"] 
+        color: #010101;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-right: 20px; 
+    width: 150px;
+    height: 66px;
+    flex-shrink: 0;
+    border-radius: 33px;
+    border: 2px solid #FCFAFA;
+    background: linear-gradient(109deg, #FFF 4.11%, #CCC 99.2%);
+    box-shadow: 7px 7px 11px 0px rgba(0, 0, 0, 0.25), -8px -8px 7px 0px rgba(255, 255, 255, 0.68), -8px -8px 13px 0px rgba(100, 100, 100, 0.14) inset, 8px 8px 4px 0px rgba(255, 255, 255, 0.25) inset;
+
+}
+
+input {
     [type="text"] 
         color: #010951;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -15,7 +39,7 @@ label, input {
         font-weight: 400;
         line-height: normal;
         text-indent: 10px;  
-    width: 250px;
+    width: 100px;
     height: 30px;
     flex-shrink: 0;
     border-radius: 33px;
@@ -23,21 +47,48 @@ label, input {
     background: linear-gradient(109deg, #FFF 4.11%, rgba(244, 244, 244, 0.00) 99.2%);
     box-shadow: 7px 7px 11px 0px rgba(0, 0, 0, 0.25), -8px -8px 7px 0px rgba(255, 255, 255, 0.68), 8px 8px 13px 0px rgba(100, 100, 100, 0.14) inset, -8px -8px 4px 0px rgba(255, 255, 255, 0.25) inset;
 }
-button {
+textarea {
     [type="text"] 
-    color: #010101;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-right: 20px; 
-width: 250px;
-height: 50px;
-flex-shrink: 0;
-border-radius: 33px;
-border: 2px solid #FCFAFA;
-background: linear-gradient(109deg, #FFF 4.11%, #CCC 99.2%);
-box-shadow: 7px 7px 11px 0px rgba(0, 0, 0, 0.25), -8px -8px 7px 0px rgba(255, 255, 255, 0.68), -8px -8px 13px 0px rgba(100, 100, 100, 0.14) inset, 8px 8px 4px 0px rgba(255, 255, 255, 0.25) inset;
+        color: #010951;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-indent: 10px;  
+    width: 100px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 33px;
+    border: 2px solid #FCFAFA;
+    background: linear-gradient(109deg, #FFF 4.11%, rgba(244, 244, 244, 0.00) 99.2%);
+    box-shadow: 7px 7px 11px 0px rgba(0, 0, 0, 0.25), -8px -8px 7px 0px rgba(255, 255, 255, 0.68), 8px 8px 13px 0px rgba(100, 100, 100, 0.14) inset, -8px -8px 4px 0px rgba(255, 255, 255, 0.25) inset;
+}
 
+#result {
+    color: #010951;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background-color: #dfdfdf;
+}
+.result_container {
+    color: #010951;
+    font-family: Montserrat;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+#result {
+    color: #010951;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background-color: #dfdfdf;
 }
